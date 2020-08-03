@@ -1,7 +1,12 @@
 "use strict";
+const express = require('express');
+const app = express();
+
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+
+app.set('port', process.env.PORT || 3000);
 Object.defineProperty(exports, "__esModule", { value: true });
 const server_1 = __importDefault(require("./classes/server"));
 const enviroment_1 = require("./global/enviroment");
@@ -23,5 +28,5 @@ server.app.use(cors_1.default({
     maxAge: 90
     }));
 server.start(() => {
-    console.log(`Servidor Corriendo en el puerto ${enviroment_1.SERVER_PORT}`);
+    console.log(`Servidor Corriendo en el puerto ${app.get('port')}`);
 });
