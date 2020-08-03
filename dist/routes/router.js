@@ -3,8 +3,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const pg_1 = require("pg");
+pg_1.defaults.ssl = true;
 const router = express_1.Router();
-const configuracionBd = { user: 'postgres', host: '0.0.0.0', database: 'tautodb', password: '1234', port: 5432, };
+const configuracionBd = { user: 'xnkpknmqsfesql', host: 'ec2-107-22-7-9.compute-1.amazonaws.com', database: 'ded7tnf38k0brr', password: '606fbc95660a9497659c663a076c14ff18e2e8e3a118af5fa920cf4d98056627', port: 5432, };
 const conexionP = new pg_1.Client(configuracionBd);
 conexionP.connect();
 console.log('ttttttttttt');
